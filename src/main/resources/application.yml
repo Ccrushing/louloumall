@@ -16,7 +16,7 @@ spring:
       max-lifetime: 30000
       connection-test-query: SELECT 1
 mybatis:
-  mapper-locations: classpath:mapper /*Mapper.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
     map-underscore-to-camel-case: true
   type-aliases-package: top.crush.mall.api.entity
