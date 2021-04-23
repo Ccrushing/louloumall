@@ -22,6 +22,8 @@ import java.util.List;
  * @date 2021/4/23
  * @dercsiption Swagger2Config
  */
+@Configuration
+@EnableSwagger2
 public class Swagger2Config {
     @Bean
     public Docket api() {
@@ -40,7 +42,7 @@ public class Swagger2Config {
                 .select()
 
                 // 修改为自己的 controller 包路径
-                .apis(RequestHandlerSelectors.basePackage("com.mall.api"))
+                .apis(RequestHandlerSelectors.basePackage("top.crush.mall.api"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(swaggerParams);

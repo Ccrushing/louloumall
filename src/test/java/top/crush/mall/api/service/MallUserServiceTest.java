@@ -19,7 +19,7 @@ class MallUserServiceTest {
 
     @Test
     void register() {
-        String register = mallUserService.register("18014263405", "1234567");
+        String register = mallUserService.register("18014267405", "1234567");
         log.info(register);
         assertEquals("success", register);
     }
