@@ -12,7 +12,7 @@ import java.util.List;
  * @dercsiption 首页VO类
  */
 @Data
-public class IndexInfoVO implements Serializable {
+public class IndexInfoVO<MallIndexConfigGoodsVO> implements Serializable {
     @ApiModelProperty("轮播图(列表)")
     private List<MallIndexCarouselVO> carousels;
     @ApiModelProperty("首页热销商品(列表)")
