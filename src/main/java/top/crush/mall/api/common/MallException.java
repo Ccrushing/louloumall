@@ -15,7 +15,8 @@ public class MallException extends RuntimeException {
     }
 
     /**
-     * 抛出异常     *     * @param message 消息
+     * 抛出异常     *     *
+     * @param message 消息
      */
     public static void fail(String message) {
         throw new MallException(message);

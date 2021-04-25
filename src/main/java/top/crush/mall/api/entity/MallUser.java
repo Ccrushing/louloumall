@@ -2,17 +2,28 @@ package top.crush.mall.api.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 
  * @TableName tb_mall_user
  */
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName("tb_mall_user")
 public class MallUser implements Serializable {
     /**
      * 用户主键id
      */
+    @TableId
     private Long userId;
 
     /**

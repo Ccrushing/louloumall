@@ -28,7 +28,7 @@
         from tb_mall_user
         where user_id = #{userId,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" parameterType="mallUser">
+    <insert id="insert" parameterType="top.crush.mall.api.entity.MallUser">
         insert into tb_mall_user (user_id, nick_name, login_name,
                                   password_md5, introduce_sign,
                                   address, is_deleted, locked_flag,
@@ -43,7 +43,7 @@
                 #{lockedFlag,jdbcType=TINYINT},
                 #{createTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" parameterType="MallUser">
+    <insert id="insertSelective" parameterType="top.crush.mall.api.entity.MallUser">
         insert into tb_mall_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userId != null">user_id,</if>
@@ -66,7 +66,7 @@
             <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="MallUser">update tb_mall_user
+    <update id="updateByPrimaryKeySelective" parameterType="top.crush.mall.api.entity.MallUser">update tb_mall_user
         <set>
             <if test="nickName != null">nick_name = #{nickName,jdbcType=VARCHAR},</if>
             <if test="loginName != null">login_name = #{loginName,jdbcType=VARCHAR},</if>
@@ -79,7 +79,7 @@
         </set>
         where user_id = #{userId,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="MallUser">
+    <update id="updateByPrimaryKey" parameterType="top.crush.mall.api.entity.MallUser">
         update tb_mall_user
         set nick_name      = #{nickName,jdbcType=VARCHAR},
             login_name     = #{loginName,jdbcType=VARCHAR},
@@ -91,14 +91,14 @@
             create_time    = #{createTime,jdbcType=TIMESTAMP}
         where user_id = #{userId,jdbcType=BIGINT}
     </update>
-    <select id="selectByLoginName" resultType="MallUser">
+    <select id="selectByLoginName" resultType="top.crush.mall.api.entity.MallUser">
         select
         <include refid="Base_Column_List"/>
         from tb_mall_user
         where login_name = #{loginName}
         and is_deleted = 0
     </select>
-    <select id="selectByLoginNameAndPasswd" resultType="MallUser">
+    <select id="selectByLoginNameAndPasswd" resultType="top.crush.mall.api.entity.MallUser">
         select
         <include refid="Base_Column_List"/>
         from tb_mall_user

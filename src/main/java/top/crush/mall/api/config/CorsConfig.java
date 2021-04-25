@@ -33,7 +33,8 @@ public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();        // 对接口配置跨域设置
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        // 对接口配置跨域设置
         source.registerCorsConfiguration("/**", buildConfig());
         return new CorsFilter(source);
     }

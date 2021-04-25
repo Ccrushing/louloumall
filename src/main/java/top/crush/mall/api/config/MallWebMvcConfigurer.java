@@ -17,13 +17,14 @@ import java.util.List;
  */
 @Configuration
 public class MallWebMvcConfigurer implements WebMvcConfigurer {
+
     @Resource
     private TokenToMallUserMethodArgumentResolver tokenToMallUserMethodArgumentResolver;
 
     /**
      * TokenToMallUser 注解处理方法
      *
-     *  @param argumentResolvers 参数解析器
+     * @param argumentResolvers 参数解析器
      */
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
@@ -36,5 +37,3 @@ public class MallWebMvcConfigurer implements WebMvcConfigurer {
         registry.addResourceHandler("/goods-img/**").addResourceLocations("file:" + Constants.FILE_UPLOAD_DIC);
     }
 }
-
-
